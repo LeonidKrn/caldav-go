@@ -85,6 +85,8 @@ func (s *EventSuite) TestFullEventMarshal(c *C) {
 	event.TimeTransparency = values.OpaqueTimeTransparency
 	uri, _ = url.Parse("http://student.rsniezynski.com/san-francisco/jonathan-azoff/vinyasa-1")
 	event.Url = values.NewUrl(*uri)
+	event.Color = "opal"
+	event.TextColor = "#ffffff"
 	enc, err := icalendar.Marshal(event)
 	if err != nil {
 		c.Fatal(err.Error())
@@ -99,7 +101,8 @@ func (s *EventSuite) TestFullEventMarshal(c *C) {
 		"ATTENDEE;CN=\"Jon Azoff\":mailto:jon@rsniezynski.com\r\nATTENDEE;CN=\"Matthew Davie\":mailto:matthew@rsniezynski.com\r\n" +
 		"CATEGORIES:vinyasa,level 1\r\nCOMMENT:Great class, 5 stars!\r\nCOMMENT:I love this class!\r\n" +
 		"CONTACT:Send us an email!,<jon@rsniezynski.com>\r\nEXDATE:%s,%s\r\nRDATE:%s,%s\r\n" +
-		"RELATED-TO;VALUE=URI:matthew@rsniezynski.com\r\nRESOURCES:yoga mat,towel\r\nEND:VEVENT"
+		"RELATED-TO;VALUE=URI:matthew@rsniezynski.com\r\nRESOURCES:yoga mat,towel\r\nCOLOR:opal\r\n" +
+		"X-FULLCALENDAR-TEXT-COLOR:#ffffff\r\nEND:VEVENT"
 	sdate := now.Format(values.DateTimeFormatString)
 	edate := end.Format(values.DateTimeFormatString)
 	c.Assert(enc, Equals, fmt.Sprintf(tmpl, sdate, sdate, edate, sdate, sdate, sdate, ex1, ex2, r1, r2))
