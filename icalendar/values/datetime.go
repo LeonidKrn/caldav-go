@@ -20,7 +20,7 @@ const UTCDateTimeFormatString = "20060102T150405Z"
 // a representation of a date and time for iCalendar
 type DateTime struct {
 	t          time.Time
-	fullTime   bool
+	AllDay     bool
 	SkipAddUTC bool // if true, don't add trailing "Z" for UTC times
 }
 
@@ -60,10 +60,10 @@ type RecurrenceDateTimes DateTimes
 
 // creates a new icalendar datetime representation
 func NewDateTime(t time.Time) *DateTime {
-	return &DateTime{t: t.Truncate(time.Second), fullTime: true}
+	return &DateTime{t: t.Truncate(time.Second), AllDay: false}
 }
 func NewDateTimeDate(t time.Time) *DateTime {
-	return &DateTime{t: t.Truncate(time.Second), fullTime: false}
+	return &DateTime{t: t.Truncate(time.Second), AllDay: true}
 }
 
 // creates a new icalendar datetime array representation
@@ -102,14 +102,14 @@ func (d *DateTime) NativeTime() time.Time {
 // encodes the datetime value for the iCalendar specification
 func (d *DateTime) EncodeICalValue() (string, error) {
 	var val string
-	if d.fullTime {
+	if d.AllDay {
+		val = d.t.Format(DateFormatString)
+	} else {
 		val = d.t.Format(DateTimeFormatString)
 		loc := d.t.Location()
 		if loc == time.UTC && !d.SkipAddUTC {
 			val = fmt.Sprintf("%sZ", val)
 		}
-	} else {
-		val = d.t.Format(DateFormatString)
 	}
 
 	return val, nil
@@ -118,14 +118,14 @@ func (d *DateTime) EncodeICalValue() (string, error) {
 // decodes the datetime value from the iCalendar specification
 func (d *DateTime) DecodeICalValue(value string) error {
 	layout := DateTimeFormatString
-	d.fullTime = true
+	d.AllDay = false
 	if strings.HasSuffix(value, "Z") {
 		layout = UTCDateTimeFormatString
 	} else if len(value) == 15 {
 		layout = DateTimeFormatString
 	} else if len(value) == 8 {
 		layout = DateFormatString
-		d.fullTime = false
+		d.AllDay = true
 	}
 	var err error
 	d.t, err = time.ParseInLocation(layout, value, time.UTC)
