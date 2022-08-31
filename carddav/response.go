@@ -1,11 +1,12 @@
 package carddav
 
 import (
-	"github.com/pauldemarco/caldav-go/icalendar"
-	"github.com/pauldemarco/caldav-go/utils"
-	"github.com/pauldemarco/caldav-go/webdav"
 	"io/ioutil"
 	"log"
+
+	"github.com/LeonidKrn/caldav-go/icalendar"
+	"github.com/LeonidKrn/caldav-go/utils"
+	"github.com/LeonidKrn/caldav-go/webdav"
 )
 
 var _ = log.Print

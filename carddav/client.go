@@ -2,13 +2,14 @@ package carddav
 
 import (
 	"fmt"
-	cont "github.com/pauldemarco/caldav-go/carddav/entities"
-	"github.com/pauldemarco/caldav-go/icalendar/components"
-	"github.com/pauldemarco/caldav-go/utils"
-	"github.com/pauldemarco/caldav-go/webdav"
-	"github.com/pauldemarco/caldav-go/webdav/entities"
 	"log"
 	"net/http"
+
+	cont "github.com/LeonidKrn/caldav-go/carddav/entities"
+	"github.com/LeonidKrn/caldav-go/icalendar/components"
+	"github.com/LeonidKrn/caldav-go/utils"
+	"github.com/LeonidKrn/caldav-go/webdav"
+	"github.com/LeonidKrn/caldav-go/webdav/entities"
 )
 
 var _ = log.Print

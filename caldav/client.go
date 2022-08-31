@@ -7,13 +7,13 @@ import (
 	"strings"
 	"time"
 
+	cent "github.com/LeonidKrn/caldav-go/caldav/entities"
+	"github.com/LeonidKrn/caldav-go/icalendar/components"
+	"github.com/LeonidKrn/caldav-go/icalendar/values"
+	"github.com/LeonidKrn/caldav-go/utils"
+	"github.com/LeonidKrn/caldav-go/webdav"
+	"github.com/LeonidKrn/caldav-go/webdav/entities"
 	guuid "github.com/google/uuid"
-	cent "github.com/pauldemarco/caldav-go/caldav/entities"
-	"github.com/pauldemarco/caldav-go/icalendar/components"
-	"github.com/pauldemarco/caldav-go/icalendar/values"
-	"github.com/pauldemarco/caldav-go/utils"
-	"github.com/pauldemarco/caldav-go/webdav"
-	"github.com/pauldemarco/caldav-go/webdav/entities"
 )
 
 var _ = log.Print

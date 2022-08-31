@@ -17,14 +17,14 @@ Getting Started
 To install the library into your project, add caldev-go into your `GOPATH`:
 
 ```sh
-$ go get github.com/pauldemarco/caldav-go
+$ go get github.com/LeonidKrn/caldav-go
 ```
 
 Then, in your go application, include the caldav client and start making requests:
 
 ```go
 
-import "github.com/pauldemarco/caldav-go/caldav"
+import "github.com/LeonidKrn/caldav-go/caldav"
 
 // create a reference to your CalDAV-compliant server
 var server = caldav.NewServer("http://my-caldav-host.net:8008")

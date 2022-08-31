@@ -4,10 +4,10 @@ import (
 	"encoding/xml"
 	"strings"
 
-	"github.com/pauldemarco/caldav-go/caldav/values"
-	"github.com/pauldemarco/caldav-go/icalendar"
-	"github.com/pauldemarco/caldav-go/icalendar/components"
-	"github.com/pauldemarco/caldav-go/utils"
+	"github.com/LeonidKrn/caldav-go/caldav/values"
+	"github.com/LeonidKrn/caldav-go/icalendar"
+	"github.com/LeonidKrn/caldav-go/icalendar/components"
+	"github.com/LeonidKrn/caldav-go/utils"
 )
 
 // a CalDAV calendar data object

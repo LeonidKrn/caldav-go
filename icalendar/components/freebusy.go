@@ -1,9 +1,10 @@
 package components
 
 import (
-	"github.com/pauldemarco/caldav-go/icalendar/values"
-	"github.com/pauldemarco/caldav-go/utils"
 	"time"
+
+	"github.com/LeonidKrn/caldav-go/icalendar/values"
+	"github.com/LeonidKrn/caldav-go/utils"
 )
 
 type FreeBusy struct {

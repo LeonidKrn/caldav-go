@@ -8,8 +8,8 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/pauldemarco/caldav-go/icalendar/properties"
-	"github.com/pauldemarco/caldav-go/utils"
+	"github.com/LeonidKrn/caldav-go/icalendar/properties"
+	"github.com/LeonidKrn/caldav-go/utils"
 )
 
 var _ = log.Print

@@ -8,8 +8,8 @@ import (
 
 	"strings"
 
-	"github.com/pauldemarco/caldav-go/icalendar"
-	"github.com/pauldemarco/caldav-go/icalendar/values"
+	"github.com/LeonidKrn/caldav-go/icalendar"
+	"github.com/LeonidKrn/caldav-go/icalendar/values"
 	. "gopkg.in/check.v1"
 )
 

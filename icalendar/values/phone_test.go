@@ -1,9 +1,10 @@
 package values
 
 import (
-	"github.com/pauldemarco/caldav-go/icalendar"
-	. "gopkg.in/check.v1"
 	"testing"
+
+	"github.com/LeonidKrn/caldav-go/icalendar"
+	. "gopkg.in/check.v1"
 )
 
 type phoneSuite struct{}

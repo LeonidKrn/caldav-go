@@ -3,8 +3,8 @@ package values
 import (
 	"net/url"
 
-	"github.com/pauldemarco/caldav-go/icalendar/properties"
-	"github.com/pauldemarco/caldav-go/utils"
+	"github.com/LeonidKrn/caldav-go/icalendar/properties"
+	"github.com/LeonidKrn/caldav-go/utils"
 )
 
 // a representation of duration for iCalendar

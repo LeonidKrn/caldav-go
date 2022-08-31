@@ -2,10 +2,11 @@ package entities
 
 import (
 	"encoding/xml"
-	"github.com/pauldemarco/caldav-go/icalendar"
-	"github.com/pauldemarco/caldav-go/icalendar/components"
-	"github.com/pauldemarco/caldav-go/utils"
 	"strings"
+
+	"github.com/LeonidKrn/caldav-go/icalendar"
+	"github.com/LeonidKrn/caldav-go/icalendar/components"
+	"github.com/LeonidKrn/caldav-go/utils"
 )
 
 type AddressData struct {
